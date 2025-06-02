@@ -1,0 +1,173 @@
+CREATE TABLE employees (
+    ID INT PRIMARY KEY,
+    profile_image_path VARCHAR(255),
+    Name VARCHAR(255),
+    Surname VARCHAR(255),
+    Username VARCHAR(255),
+    user_password VARCHAR(255),
+    Email VARCHAR(255),
+    Age INT,
+    Registration_Date DATE,
+    Role VARCHAR(255),
+    addedBy INT 
+    FOREIGN KEY (`addedBy`) REFERENCES `employees`(`ID`)
+);
+
+INSERT INTO employees (ID, profile_image_path, Name, Surname, Username, user_password, Email, Age, Registration_Date, Role, addedBy) VALUES
+(1, '../images/imageProfile/man1.jpg', 'Ardian', 'Dervishi', 'ardian_d', '2f0de441f82a69ed1edc7a8da2c760ae19d2e44f958b00e1ad84fc948acbe4e0', 'ardian.dervishi@example.com', 19, '2025-05-07', 'Admin', 1),
+(2, '../images/imageProfile/man2.jpg', 'Granit', 'Shabani', 'granit_s', '2f0de441f82a69ed1edc7a8da2c760ae19d2e44f958b00e1ad84fc948acbe4e0', 'granit.shabani@example.com', 35, '2025-05-07', 'Admin', 1),
+(4, '../images/imageProfile/girl2.jpg', 'Albiona', 'Mehmeti', 'albiona_m', '2f0de441f82a69ed1edc7a8da2c760ae19d2e44f958b00e1ad84fc948acbe4e0', 'albiona.mehmeti@example.com', 29, '2025-05-07', 'Manager', 1),
+(5, '../images/imageProfile/man3.jpg', 'Florian', 'Gashi', 'florian_g', '2f0de441f82a69ed1edc7a8da2c760ae19d2e44f958b00e1ad84fc948acbe4e0', 'florian.gashi@example.com', 32, '2025-05-07', 'Manager', 1),
+(21, '../images/imageProfile/682869eb6e4b8.jpg', 'new', 'new', 'username', '2f0de441f82a69ed1edc7a8da2c760ae19d2e44f958b00e1ad84fc948acbe4e0', 'email@gmail.com', 18, '2025-05-17', 'Manager', 1);
+
+
+CREATE TABLE packages (
+    ID INT PRIMARY KEY,
+    Name VARCHAR(255),
+    Type VARCHAR(255),
+    Price DECIMAL(10,2),
+    Date DATE,
+    endDate DATE,
+    Place VARCHAR(255),
+    Description TEXT,
+    available_spots INT,
+    image_path VARCHAR(255),
+    Duration INT
+);
+
+INSERT INTO packages (ID, Name, Type, Price, Date, endDate, Place, Description, available_spots, image_path, Duration) VALUES
+(1, 'Bali Paradise', 'All-Inclusive', 2500, '2025-06-15', '2025-06-20', 'Bali, Indonesia', 'Luxury resort with full meals, spa, and guided tours.', 18, '../images/6831d8de8a437_bali.jpg', 7),
+(2, 'Barcelona Adventure', 'Airplane Trip with Guide', 1800, '2025-07-10', '2025-07-13', 'Barcelona, Spain', 'Guided exploration of Barcelona’s top attractions.', 12, '../images/6831d05f0a08a_barcelona.jpg', 5),
+(3, 'Berat Historic Tour', 'Individual Package', 900, '2025-08-05', '2025-08-10', 'Berat, Albania', 'Cultural exploration of the city of a thousand windows.', 8, '../images/6834d03c8aa6d_6831ce9a1e3c9_berat.jpg', 3),
+(4, 'Ksamil Beach Retreat', 'All-Inclusive', 1400, '2025-06-25', '2025-06-30', 'Ksamil, Albania', 'Relaxing seaside package with full accommodation.', 12, '../images/683499b1adf26_ksamil.jpg', 5),
+(5, 'New Zealand Explorer', 'Airplane Trip with Guide', 2800, '2025-09-10', '2025-09-20', 'New Zealand', 'A guided adventure through stunning landscapes.', 18, '../images/newZealand.jpg', 7),
+(6, 'Santorini Escape', 'All-Inclusive', 2300, '2025-06-30', '2025-07-05', 'Santorini, Greece', 'Luxury stay with private villas, sunset cruises.', 18, '../images/683499c932501_santorini.webp', 6),
+(7, 'Vienna City Break', 'Airplane Trip with Guide', 1600, '2025-07-20', '2025-07-25', 'Vienna, Austria', 'Historical Vienna tour including classical concerts.', 14, '../images/683499decc35b_viene.jpg', 4),
+(8, 'Maldives Overwater Escape', 'All-Inclusive', 3200, '2025-08-15', '2025-08-20', 'Maldives', 'Private overwater bungalows with gourmet dining.', 15, '../images/68349a3ce68ef_maldives.jpg', 6),
+(9, 'Koman Lake Adventure', 'Individual Package', 800, '2025-07-05', '2025-07-10', 'Koman Lake, Albania', 'Boat trip and hiking around breathtaking lake landscapes.', 10, '../images/68349a5a496d4_Koman.jpg', 2),
+(10, 'Kruja Cultural Tour', 'Individual Package', 950, '2025-07-12', '2025-07-20', 'Kruja, Albania', 'Discover Albanian heritage, including Skanderbeg’s museum.', 8, '../images/6831d61143c79_kruja.jpg', 8);
+
+
+CREATE TABLE `reservations` (
+    `ID` INT PRIMARY KEY,
+    `PackageID` INT,
+    `ClientID` INT,
+    `reservation_date` DATE,
+    `client_email` VARCHAR(255),
+    `client_name` VARCHAR(255),
+    `client_surname` VARCHAR(255),
+    `client_age` INT,
+    `passportID` VARCHAR(255),
+    FOREIGN KEY (`PackageID`) REFERENCES `packages`(`ID`),
+    FOREIGN KEY (`ClientID`) REFERENCES `clients`(`ID`)
+);
+INSERT INTO `reservations`(`ID`, `PackageID`, `ClientID`, `reservation_date`, `client_email`, `client_name`, `client_surname`, `client_age`, `passportID`) 
+VALUES (2, 1, 1, '2025-05-07', 'arjan.hoxha@example.com', 'Arjan', 'Hoxha', 28, 5566545);
+
+INSERT INTO `reservations`(`ID`, `PackageID`, `ClientID`, `reservation_date`, `client_email`, `client_name`, `client_surname`, `client_age`, `passportID`) 
+VALUES (11, 7, 1, '2025-04-07', 'arjan.hoxha@example.com', 'Arjan', 'Hoxha', 28, 1234567);
+
+INSERT INTO `reservations`(`ID`, `PackageID`, `ClientID`, `reservation_date`, `client_email`, `client_name`, `client_surname`, `client_age`, `passportID`) 
+VALUES (4, 2, 2, '2025-01-07', 'elvana.beqiri@example.com', 'Elvana', 'Beqiri', 32, 1234567);
+
+INSERT INTO `reservations`(`ID`, `PackageID`, `ClientID`, `reservation_date`, `client_email`, `client_name`, `client_surname`, `client_age`, `passportID`) 
+VALUES (13, 9, 2, '2025-05-12', 'elvana.beqiri@example.com', 'Elvana', 'Beqiri', 32, 1234567);
+
+INSERT INTO `reservations`(`ID`, `PackageID`, `ClientID`, `reservation_date`, `client_email`, `client_name`, `client_surname`, `client_age`, `passportID`) 
+VALUES (66, 2, 2, '2025-05-26', 'elvana.beqiri@example.com', 'Elvana', 'Beqiri', 23, 9999999);
+
+INSERT INTO `reservations`(`ID`, `PackageID`, `ClientID`, `reservation_date`, `client_email`, `client_name`, `client_surname`, `client_age`, `passportID`) 
+VALUES (68, 1, 2, '2025-05-26', 'elvana.beqiri@example.com', 'Elvana', 'Beqiri', 23, 4567899);
+
+INSERT INTO `reservations`(`ID`, `PackageID`, `ClientID`, `reservation_date`, `client_email`, `client_name`, `client_surname`, `client_age`, `passportID`) 
+VALUES (7, 4, 4, '2025-02-07', 'orgesa.shkurti@example.com', 'Orgresa', 'Shkurti', 30, 1234567);
+
+INSERT INTO `reservations`(`ID`, `PackageID`, `ClientID`, `reservation_date`, `client_email`, `client_name`, `client_surname`, `client_age`, `passportID`) 
+VALUES (67, 4, 4, '2025-05-26', 'orgesa.shkurti@example.com', 'Orgresa', 'Shkurti', 30, 5666333);
+
+INSERT INTO `reservations`(`ID`, `PackageID`, `ClientID`, `reservation_date`, `client_email`, `client_name`, `client_surname`, `client_age`, `passportID`) 
+VALUES (17, 2, 11, '2025-05-23', 'mvila12@epoka.edu.al', 'Martin', 'Vila', 45, 9876543);
+
+INSERT INTO `reservations`(`ID`, `PackageID`, `ClientID`, `reservation_date`, `client_email`, `client_name`, `client_surname`, `client_age`, `passportID`) 
+VALUES (22, 3, 11, '2025-05-23', 'mxhangolli23@epoka.edu.al', 'Mikael', 'Xhangolli', 25, 3456789);
+
+INSERT INTO `reservations`(`ID`, `PackageID`, `ClientID`, `reservation_date`, `client_email`, `client_name`, `client_surname`, `client_age`, `passportID`) 
+VALUES (23, 3, 11, '2025-05-23', 'mvila12@epoka.edu.al', 'Martin', 'Vila', 45, 9876543);
+
+INSERT INTO `reservations`(`ID`, `PackageID`, `ClientID`, `reservation_date`, `client_email`, `client_name`, `client_surname`, `client_age`, `passportID`) 
+VALUES (24, 3, 11, '2025-05-22', 'eshkurti@gmail.com', 'Endri', 'Shkurti', 54, 1238900);
+
+INSERT INTO `reservations`(`ID`, `PackageID`, `ClientID`, `reservation_date`, `client_email`, `client_name`, `client_surname`, `client_age`, `passportID`) 
+VALUES (25, 4, 11, '2025-05-23', 'mvila12@epoka.edu.al', 'Martin', 'Vila', 45, 9876543);
+
+INSERT INTO `reservations`(`ID`, `PackageID`, `ClientID`, `reservation_date`, `client_email`, `client_name`, `client_surname`, `client_age`, `passportID`) 
+VALUES (37, 4, 11, '2025-05-21', 'mvila12@epoka.edu.al', 'Martin', 'Vila', 45, 9876543);
+
+INSERT INTO `reservations`(`ID`, `PackageID`, `ClientID`, `reservation_date`, `client_email`, `client_name`, `client_surname`, `client_age`, `passportID`) 
+VALUES (38, 9, 11, '2025-05-23', 'mxhangolli23@epoka.edu.al', 'Mikael', 'Xhangolli', 5, 8745365);
+
+INSERT INTO `reservations`(`ID`, `PackageID`, `ClientID`, `reservation_date`, `client_email`, `client_name`, `client_surname`, `client_age`, `passportID`) 
+VALUES (39, 4, 11, '2025-04-23', 'mvila12@epoka.edu.al', 'Martin', 'Vila', 45, 9876543);
+
+INSERT INTO `reservations`(`ID`, `PackageID`, `ClientID`, `reservation_date`, `client_email`, `client_name`, `client_surname`, `client_age`, `passportID`) 
+VALUES (40, 2, 11, '2025-05-23', 'eshkurti@gmail.com', 'Megi', 'Shkurti', 56, 1212121);
+
+CREATE TABLE `clients` (
+    `ID` INT PRIMARY KEY AUTO_INCREMENT,
+    `Name` VARCHAR(100),
+    `Surname` VARCHAR(100),
+    `Username` VARCHAR(100) UNIQUE,
+    `user_password` CHAR(64),
+    `Email` VARCHAR(255) UNIQUE,
+    `Age` INT,
+    `Registration_Date` DATE
+);
+
+INSERT INTO `clients`(`ID`, `Name`, `Surname`, `Username`, `user_password`, `Email`, `Age`, `Registration_Date`) 
+VALUES (1, 'Arjan', 'Hoxha', 'arjan_h', '2f0de441f82a69ed1edc7a8da2c760ae19d2e44f958b00e1ad84fc948acbe4e0', 'arjan.hoxha@example.com', 28, '2025-05-07');
+
+INSERT INTO `clients`(`ID`, `Name`, `Surname`, `Username`, `user_password`, `Email`, `Age`, `Registration_Date`) 
+VALUES (2, 'Elvana', 'Beqiri', 'elvana_b', '2f0de441f82a69ed1edc7a8da2c760ae19d2e44f958b00e1ad84fc948acbe4e0', 'elvana.beqiri@example.com', 23, '2025-05-07');
+
+INSERT INTO `clients`(`ID`, `Name`, `Surname`, `Username`, `user_password`, `Email`, `Age`, `Registration_Date`) 
+VALUES (3, 'Klajdi', 'Dervishi', 'klajdi_d', '2f0de441f82a69ed1edc7a8da2c760ae19d2e44f958b00e1ad84fc948acbe4e0', 'klajdi.dervishi@example.com', 26, '2025-05-07');
+
+INSERT INTO `clients`(`ID`, `Name`, `Surname`, `Username`, `user_password`, `Email`, `Age`, `Registration_Date`) 
+VALUES (4, 'Orgresa', 'Shkurti', 'orgesa_s', '2f0de441f82a69ed1edc7a8da2c760ae19d2e44f958b00e1ad84fc948acbe4e0', 'orgesa.shkurti@example.com', 30, '2025-05-07');
+
+INSERT INTO `clients`(`ID`, `Name`, `Surname`, `Username`, `user_password`, `Email`, `Age`, `Registration_Date`) 
+VALUES (5, 'Klesti', 'Hoxha', 'klesti_h', '2f0de441f82a69ed1edc7a8da2c760ae19d2e44f958b00e1ad84fc948acbe4e0', 'klesti.hoxga@example.com', 23, '2025-05-07');
+
+INSERT INTO `clients`(`ID`, `Name`, `Surname`, `Username`, `user_password`, `Email`, `Age`, `Registration_Date`) 
+VALUES (11, 'Martin', 'Vila', 'martin_v', '2f0de441f82a69ed1edc7a8da2c760ae19d2e44f958b00e1ad84fc948acbe4e0', 'mvila23@epoka.edu.al', 20, '2025-05-23');
+
+
+CREATE TABLE `reviews` (
+  `ReviewID` int(11) NOT NULL AUTO_INCREMENT,
+  `packageID` int(11) NOT NULL,
+  `ClientID` int(11) NOT NULL,
+  `Review` text NOT NULL,
+  `Confirmed` BOOLEAN NOT NULL,
+  `DateSubmitted` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ReviewID`),
+  FOREIGN KEY (`packageID`) REFERENCES `packages`(`ID`),
+  FOREIGN KEY (`ClientID`) REFERENCES `clients`(`ID`)
+);
+INSERT INTO `reviews`(`ReviewID`, `packageID`, `ClientID`, `Review`, `Confirmed`, `DateSubmitted`) VALUES (38, 1, 1, 'This package was amazing! Highly recommend.', 1, '2025-05-23 11:25:39');
+INSERT INTO `reviews`(`ReviewID`, `packageID`, `ClientID`, `Review`, `Confirmed`, `DateSubmitted`) VALUES (39, 2, 2, 'Not satisfied with the service.', 0, '2025-05-23 11:25:39');
+INSERT INTO `reviews`(`ReviewID`, `packageID`, `ClientID`, `Review`, `Confirmed`, `DateSubmitted`) VALUES (40, 3, 3, 'Good experience overall, but room for improvement.', 0, '2025-05-23 11:25:39');
+INSERT INTO `reviews`(`ReviewID`, `packageID`, `ClientID`, `Review`, `Confirmed`, `DateSubmitted`) VALUES (41, 4, 4, 'Terrible experience. Would not book again.', 0, '2025-05-23 11:25:39');
+INSERT INTO `reviews`(`ReviewID`, `packageID`, `ClientID`, `Review`, `Confirmed`, `DateSubmitted`) VALUES (43, 6, 1, 'Everything was on time and well organized.', 1, '2025-05-23 10:30:00');
+INSERT INTO `reviews`(`ReviewID`, `packageID`, `ClientID`, `Review`, `Confirmed`, `DateSubmitted`) VALUES (45, 8, 3, 'Best vacation ever! Loved every moment.', 0, '2025-05-23 11:25:39');
+INSERT INTO `reviews`(`ReviewID`, `packageID`, `ClientID`, `Review`, `Confirmed`, `DateSubmitted`) VALUES (46, 9, 4, 'An average experience, nothing special.', 0, '2025-05-23 11:25:39');
+INSERT INTO `reviews`(`ReviewID`, `packageID`, `ClientID`, `Review`, `Confirmed`, `DateSubmitted`) VALUES (47, 5, 1, 'Fantastic support from the team. Will book again.', 0, '2025-05-23 11:25:39');
+INSERT INTO `reviews`(`ReviewID`, `packageID`, `ClientID`, `Review`, `Confirmed`, `DateSubmitted`) VALUES (48, 2, 1, 'The destination was beautiful, but the hotel was bad.', 0, '2025-05-23 11:25:39');
+INSERT INTO `reviews`(`ReviewID`, `packageID`, `ClientID`, `Review`, `Confirmed`, `DateSubmitted`) VALUES (49, 3, 2, 'Smooth process from booking to return. Very satisfied.', 1, '2025-05-23 11:25:39');
+INSERT INTO `reviews`(`ReviewID`, `packageID`, `ClientID`, `Review`, `Confirmed`, `DateSubmitted`) VALUES (50, 4, 3, 'Did not get what was promised in the itinerary.', 0, '2025-05-23 11:25:39');
+INSERT INTO `reviews`(`ReviewID`, `packageID`, `ClientID`, `Review`, `Confirmed`, `DateSubmitted`) VALUES (52, 6, 5, 'Customer service was responsive and helpful.', 0, '2025-05-23 11:25:39');
+INSERT INTO `reviews`(`ReviewID`, `packageID`, `ClientID`, `Review`, `Confirmed`, `DateSubmitted`) VALUES (53, 7, 1, 'Too many hidden charges. Felt misled.', 1, '2025-05-23 11:25:39');
+INSERT INTO `reviews`(`ReviewID`, `packageID`, `ClientID`, `Review`, `Confirmed`, `DateSubmitted`) VALUES (54, 8, 2, 'Would recommend to friends and family!', 1, '2025-05-23 11:25:39');
+INSERT INTO `reviews`(`ReviewID`, `packageID`, `ClientID`, `Review`, `Confirmed`, `DateSubmitted`) VALUES (55, 9, 3, 'Good value for the price paid.', 1, '2025-05-23 11:25:39');
+INSERT INTO `reviews`(`ReviewID`, `packageID`, `ClientID`, `Review`, `Confirmed`, `DateSubmitted`) VALUES (56, 1, 11, 'Here is a review for this package it must be approved.', 1, '2025-05-25 10:57:55');
+INSERT INTO `reviews`(`ReviewID`, `packageID`, `ClientID`, `Review`, `Confirmed`, `DateSubmitted`) VALUES (57, 4, 2, 'Here is a review that will be approved by the manager.', 1, '2025-05-26 16:46:28');
+INSERT INTO `reviews`(`ReviewID`, `packageID`, `ClientID`, `Review`, `Confirmed`, `DateSubmitted`) VALUES (58, 6, 2, 'Everything was amazing. I really enjoyed it.', 1, '2025-05-26 20:36:52');

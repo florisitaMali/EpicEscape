@@ -1,0 +1,459 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(-45deg, #cceaf7, #5ca9e9, #cceaf7, #b0d8f2);
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+
+}
+
+.hero-section {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #0d4d80;
+}
+
+.hero-text p {
+  font-size: 1.5rem;
+  color: #0d4d80;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #e3f2fd;
+  box-shadow: none !important;
+}
+
+.navbar-brand img {
+  height: 40px;
+  border-radius: 5%;
+}
+
+.nav-link {
+  font-weight: 400;
+  color: #0d4d80 !important;
+}
+
+.nav-link:hover {
+  color: #1d6fa5 !important;
+}
+
+.dropdown-menu a {
+  color: #0d4d80 !important;
+}
+
+/* ===== Tourism-themed Cards ===== */
+.card {
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #005fa3;
+}
+
+.card-body p {
+  margin-bottom: 0.4rem;
+}
+
+.card-footer {
+  background-color: transparent;
+  border-top: none;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 25px;
+  padding: 8px 20px;
+  font-weight: 500;
+}
+
+.btn-success {
+  background-color: #2ecc71;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  border: none;
+}
+
+.btn-warning {
+  background-color: #f1c40f;
+  color: #000;
+  border: none;
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+  border: none;
+}
+
+/* Modals */
+.modal-header {
+  background-color: #3498db;
+  color: white;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.modal-content {
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Form layout */
+.form-control, .form-select {
+  border-radius: 10px;
+  box-shadow: none;
+  border: 1px solid #ccc;
+}
+
+label {
+  font-weight: 500;
+  color: #333;
+}
+
+/* Header for page title */
+h2.text-primary {
+  font-weight: bold;
+  color: #007BFF !important;
+  text-shadow: 1px 1px 2px rgba(0, 123, 255, 0.1);
+}
+
+
+.card {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-body p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.modal-content {
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  background: linear-gradient(to bottom right, #f0f8ff, #e6f2ff);
+}
+
+.modal-header, .modal-footer {
+  border: none;
+}
+
+.btn {
+  border-radius: 10px;
+}
+
+.btn-primary, .btn-success {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.btn-primary:hover, .btn-success:hover {
+  background-color: #084298;
+  border-color: #073c8c;
+}
+
+.form-control {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 10px 14px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
+}
+
+label.form-label {
+  font-weight: 600;
+  color: #1b4f72;
+}
+
+@media (max-width: 767px) {
+  .main-content {
+    margin-top: 130px; /* More space for collapsed navbar */
+  }
+}
+
+
+.main-content {
+  margin-top: 100px;
+  padding: 0 2rem;
+}
+
+h3 {
+  font-weight: bold;
+  color: #0d6efd;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #0d6efd;
+  color: white;
+  font-weight: 600;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(13, 110, 253, 0.1);
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.table thead th {
+  background-color: #0d6efd;
+  color: white;
+  border-bottom: none;
+}
+
+.table {
+  background-color: transparent;
+}
+
+#search-container {
+  margin-bottom: 20px;
+}
+
+.autocomplete-suggestions {
+  border: 1px solid #ccc;
+  background: white;
+  max-height: 150px;
+  overflow-y: auto;
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+}
+
+.autocomplete-suggestions div {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.autocomplete-suggestions div:hover {
+  background-color: #f1f1f1;
+}
+
+#reset-btn {
+  margin-left: 10px;
+  border-top: none !important;
+}
+#search-container,
+#search-container * {
+border-top: none !important;
+}
+
+/* Limit autocomplete width and adjust positioning */
+#autocomplete {
+  max-width: 300px;
+  min-width: 200px;
+  top: 100%; /* Position just below input */
+  left: 0;
+  margin-top: 2px;
+  z-index: 1050; /* Make sure it appears over other elements */
+}
+
+#autocomplete .autocomplete-suggestions {
+  border: 1px solid #ccc;
+  background: white;
+  max-height: 200px;
+  overflow-y: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#autocomplete .autocomplete-suggestions div {
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+ /* === RESERVATION PAGE STYLING TO MATCH CLIENT MANAGEMENT === */
+
+/* Page Title */
+h2.text-center {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #0d4d80;
+  border-bottom: 3px solid #0d4d80;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+/* Filters Sidebar */
+.filter-sidebar {
+  background-color: #ffffff !important;
+  border: 1px solid #dbe9f4;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 15px !important;
+}
+
+.filter-sidebar h5 {
+  color: #0d4d80;
+  font-weight: 600;
+}
+
+.filter-sidebar .form-label {
+  font-weight: 500;
+  color: #0d4d80;
+}
+
+.filter-sidebar input[type="text"],
+.filter-sidebar input[type="date"],
+.filter-sidebar select,
+.filter-sidebar .form-range {
+  border-radius: 8px;
+  border: 1px solid #d0dfe8;
+  box-shadow: none;
+}
+
+.filter-sidebar .btn-outline-primary {
+  border-radius: 25px;
+  font-weight: 500;
+  border-color: #3498db;
+  color: #3498db;
+}
+
+.filter-sidebar .btn-outline-primary:hover {
+  background-color: #3498db;
+  color: #fff;
+}
+
+/* Table Styling */
+#clientTable {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+#clientTable thead {
+  background-color: #0d4d80;
+  color: white;
+}
+
+#clientTable th {
+  font-weight: 600;
+  padding: 12px;
+  border: none;
+}
+
+#clientTable td {
+  padding: 10px;
+  color: #333;
+  border-top: 1px solid #e4ecf4;
+}
+
+/* Sort Select */
+#sortSelect {
+  border-radius: 8px;
+  border: 1px solid #d0dfe8;
+  padding: 6px 12px;
+  color: #0d4d80;
+}
+
+/* Alert for No Results */
+#noResults {
+  border-radius: 10px;
+  font-weight: 500;
+  color: #ff6f61;
+  background-color: #fff4f3;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .filter-sidebar {
+    margin-top: 20px;
+  }
+
+  #sortSelect {
+    width: 100% !important;
+    margin-top: 10px;
+  }
+}
+
+
+.profile-page .card-header { 
+  background-color: #2e7ee6;
+  height: 500px;
+  position: relative;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.profile-page .profile-image { 
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #ffffff;
+  background: #ffffff;
+}
+
+.profile-page .profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
