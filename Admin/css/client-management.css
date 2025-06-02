@@ -1,0 +1,26 @@
+/* New isolated CSS file: client-management.css */
+.filter-sidebar {
+  background-color: #f0f8ff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+.filter-sidebar h5 {
+  color: #2e7ee6;
+  font-weight: 600;
+}
+
+.table th,
+.table td {
+  vertical-align: middle;
+}
+
+#clientTable thead th {
+  background-color: #007bff;
+  color: #fff;
+}
+
+#noResults {
+  margin-top: 15px;
+}

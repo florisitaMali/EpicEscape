@@ -1,0 +1,167 @@
+.card {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-body p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.modal-content {
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  background: linear-gradient(to bottom right, #f0f8ff, #e6f2ff);
+}
+
+.modal-header,
+.modal-footer {
+  border: none;
+}
+
+.btn {
+  border-radius: 10px;
+}
+
+.btn-primary,
+.btn-success {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.btn-primary:hover,
+.btn-success:hover {
+  background-color: #084298;
+  border-color: #073c8c;
+}
+
+.form-control {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 10px 14px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
+}
+
+label.form-label {
+  font-weight: 600;
+  color: #1b4f72;
+}
+
+@media (max-width: 767px) {
+  .main-content {
+    margin-top: 130px; /* More space for collapsed navbar */
+  }
+}
+
+
+h3 {
+  font-weight: bold;
+  color: #0d6efd;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #0d6efd;
+  color: white;
+  font-weight: 600;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(13, 110, 253, 0.1);
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.table thead th {
+  background-color: #0d6efd;
+  color: white;
+  border-bottom: none;
+}
+
+.table {
+  background-color: transparent;
+}
+
+#search-container {
+  margin-bottom: 20px;
+}
+
+.autocomplete-suggestions {
+  border: 1px solid #ccc;
+  background: white;
+  max-height: 150px;
+  overflow-y: auto;
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+}
+
+.autocomplete-suggestions div {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.autocomplete-suggestions div:hover {
+  background-color: #f1f1f1;
+}
+
+#reset-btn {
+  margin-left: 10px;
+  border-top: none !important;
+}
+
+#search-container,
+#search-container * {
+  border-top: none !important;
+}
+
+#autocomplete {
+  max-width: 300px;
+  min-width: 200px;
+  top: 100%;
+  left: 0;
+  margin-top: 2px;
+  z-index: 1050;
+}
+
+#autocomplete .autocomplete-suggestions {
+  border: 1px solid #ccc;
+  background: white;
+  max-height: 200px;
+  overflow-y: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#autocomplete .autocomplete-suggestions div {
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

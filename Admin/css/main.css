@@ -1,0 +1,239 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(-45deg, #cceaf7, #5ca9e9, #cceaf7, #b0d8f2);
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.hero-section {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(-45deg, #cceaf7, #5ca9e9, #cceaf7, #b0d8f2);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #0d4d80;
+}
+
+.hero-text p {
+  font-size: 1.5rem;
+  color: #0d4d80;
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: #e3f2fd;
+}
+
+.navbar-brand img {
+  height: 50px;
+  border-radius: 10%;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: #0d4d80 !important;
+}
+
+.nav-link:hover {
+  color: #1d6fa5 !important;
+}
+
+.dropdown-menu a {
+  color: #0d4d80 !important;
+}
+
+.container{
+  justify-items: center;
+}
+
+.togglePassword {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.modal-header {
+  border-bottom: 2px solid #dee2e6;
+}
+
+.invalid-feedback {
+  font-size: 0.875rem;
+}
+
+.bi {
+  vertical-align: middle;
+}
+input.form-control::placeholder,
+select.form-select {
+  font-size: 0.95rem;
+  color: #999;
+}
+
+form input.form-control,
+form select.form-select {
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.centered-section {
+  margin: 40px auto;
+  max-width: calc(100% - 80px); /* Ensures 40px margin on each side */
+  width: 100%;
+}
+
+.employee-card {
+  width: 350px;
+  max-width: 400px; /* Ensuring uniform card sizing */
+  margin: auto;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.employee-card:hover {
+  transform: translateY(-5px);
+}
+
+.employee-card .card-header {
+  background-color: #2e7ee6;
+  height: 120px;
+  position: relative;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.employee-card .profile-image {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #ffffff;
+  background: #ffffff;
+}
+
+.employee-card .profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.employee-card .card-body {
+  padding: 60px 20px 20px;
+}
+
+.employee-card h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.employee-card p {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.employee-card .actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.employee-card .actions .btn {
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+/* Add spacing between swiper and pagination */
+.swiper {
+  margin: 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  transition: transform 0.3s ease-in-out;
+  padding: 0 15px; /* 30px total between slides */
+}
+
+.swiper-slide-active .employee-card {
+  transform: scale(1.1); /* Enlarge center card */
+  z-index: 2;
+}
+
+.swiper-slide-prev .employee-card,
+.swiper-slide-next .employee-card {
+  transform: scale(0.9); /* Shrink side cards */
+  opacity: 0.9;
+}
+
+.profile-page .card-header { 
+  background-color: #2e7ee6;
+  height: 500px;
+  position: relative;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.profile-page .profile-image { 
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #ffffff;
+  background: #ffffff;
+}
+
+.profile-page .profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
